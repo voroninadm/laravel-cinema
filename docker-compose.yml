@@ -98,6 +98,14 @@ services:
             - '/dev/shm:/dev/shm'
         networks:
             - sail
+    phpmyadmin:
+        image: phpmyadmin:5.2.1
+        environment:
+            PMA_HOST: mysql
+        ports:
+            - '${APP_DB_ADMIN_PORT:-8000}:80'
+        networks:
+            - sail
 networks:
     sail:
         driver: bridge
