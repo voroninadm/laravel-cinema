@@ -2,31 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Contracts\Support\Responsable;
 
 class AuthController extends Controller
 {
     /**
      * регистрация юзера
+     * @return Responsable
      */
-    public function register()
+    public function register(): Responsable
     {
-        return 'регистрация юзера';
+        return $this->success([],201);
     }
 
     /**
      * авторизация и создания токена аутентификации
+     * @return Responsable
      */
-    public function login()
+    public function login(): Responsable
     {
-        return 'авторизация и создания токена аутентификации';
+        return $this->success([]);
     }
 
     /**
      * удаление токена аутентификации
+     * @return Responsable
      */
-    public function logout()
+    public function logout(): Responsable
     {
-        return 'удаление токена аутентификации';
+        return $this->success(null, 204);
     }
 }

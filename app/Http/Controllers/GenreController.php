@@ -2,23 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+use Illuminate\Contracts\Support\Responsable;
 
 class GenreController extends Controller
 {
     /**
      * получение списка жанров
+     * @return Responsable
      */
-    public function index()
+    public function index(): Responsable
     {
-        return 'получение списка жанров';
+        return $this->success([]);
     }
 
     /**
      * редактирование жанра
+     * @return Responsable
      */
-    public function update()
+    public function update(): Responsable
     {
-        return 'редактирование жанра';
+        return $this->success([]);
     }
 }

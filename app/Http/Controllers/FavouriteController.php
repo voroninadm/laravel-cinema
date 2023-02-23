@@ -2,31 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Contracts\Support\Responsable;
 
 class FavouriteController extends Controller
 {
     /**
      * получение списка фильмов, добавленных юзером в избранное
+     * @return Responsable
      */
-    public function index()
+    public function index(): Responsable
     {
-        return 'получение списка фильмов, добавленных юзером в избранное';
+        return $this->success([]);
     }
 
     /**
      * добавление фильма в избранное
+     * @return Responsable
      */
-    public function store()
+    public function store(): Responsable
     {
-        return 'получение списка фильмов, добавленных юзером в избранное';
+        return $this->success([], 201);
     }
 
     /**
      * удаление фильма из избранного
+     * @return Responsable
      */
-    public function destroy()
+    public function destroy(): Responsable
     {
-        return 'удаление фильма из избранного';
+        return $this->success([]);
     }
 }
