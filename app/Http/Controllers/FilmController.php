@@ -3,47 +3,52 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Support\Responsable;
-use Illuminate\Http\Request;
+
 
 class FilmController extends Controller
 {
     /**
      * получение списка фильмов
+     * @return Responsable
      */
-    public function index()
+    public function index(): Responsable
     {
-        return 'получение списка фильмов';
+        return $this->success([]);
     }
 
     /**
      * добавление фильма в базу
+     * @return Responsable
      */
-    public function store()
+    public function store(): Responsable
     {
-        return 'добавление фильма в базу';
+        return $this->success([], 201);
     }
 
     /**
      * получение информации о фильме
+     * @return Responsable
      */
-    public function show()
+    public function show(): Responsable
     {
-        return 'получение информации о фильме';
+        return $this->success([]);
     }
 
     /**
      * редактирование фильма
+     * @return Responsable
      */
-    public function update()
+    public function update(): Responsable
     {
-        return 'редактирование фильма';
+        return $this->success([]);
     }
 
     /**
      * получение списка похожих фильмов
+     * @return Responsable
      */
-    public function similar()
+    public function similar(): Responsable
     {
-        return 'получение списка похожих фильмов';
+        return $this->success([]);
     }
 }

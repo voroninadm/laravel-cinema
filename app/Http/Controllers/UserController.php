@@ -2,24 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Contracts\Support\Responsable;
 
 class UserController extends Controller
 {
-
     /**
      * получение профиля пользователя
+     * @return Responsable
      */
-    public function show()
+    public function show(): Responsable
     {
-        return 'получение профиля пользователя';
+        return $this->success(['получение профиля пользователя']);
     }
 
     /**
      * обновление профиля пользователя
+     * @return Responsable
      */
-    public function update()
+    public function update(): Responsable
     {
-        return 'обновление профиля пользователя';
+        return $this->success([]);
     }
 }

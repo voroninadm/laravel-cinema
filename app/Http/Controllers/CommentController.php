@@ -2,39 +2,43 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Contracts\Support\Responsable;
 
 class CommentController extends Controller
 {
     /**
      * получение списка отзывов к фильму
+     * @return Responsable
      */
-    public function index()
+    public function index(): Responsable
     {
-        return 'получение списка отзывов к фильму';
+        return $this->success([]);
     }
 
     /**
      * добавление отзыва к фильму
+     * @return Responsable
      */
     public function store()
     {
-        return 'добавление отзыва к фильму';
+        return $this->success([], 201);
     }
 
     /**
      * редактирование отзыва к фильму
+     * @return Responsable
      */
     public function update()
     {
-        return 'редактирование отзыва к фильму';
+        return $this->success([]);
     }
 
     /**
      * удаление отзыва к фильму
+     * @return Responsable
      */
     public function destroy()
     {
-        return 'удаление отзыва к фильму';
+        return $this->success([], 204);
     }
 }
