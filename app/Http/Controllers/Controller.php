@@ -15,14 +15,14 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
 
-    protected function success($data, ?int $code = Response::HTTP_OK): SuccessResponse
+    protected function success(mixed $data, ?int $code = Response::HTTP_OK): SuccessResponse
     {
         return new SuccessResponse($data, $code);
     }
 
-    protected function fail($data, ?string $message = null, int $code = Response::HTTP_BAD_REQUEST): FailResponse
+    protected function fail($errors, ?string $message = null, int $code = Response::HTTP_BAD_REQUEST): FailResponse
     {
-        return new FailResponse($data, $message, $code);
+        return new FailResponse($errors, $message, $code);
     }
 
     protected function exception(Throwable $exception, int $code = Response::HTTP_INTERNAL_SERVER_ERROR): ExceptionResponse

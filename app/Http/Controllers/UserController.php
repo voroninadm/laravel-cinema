@@ -12,7 +12,7 @@ class UserController extends Controller
      */
     public function show(): Responsable
     {
-        return $this->success(['получение профиля пользователя']);
+        return $this->success([]);
     }
 
     /**

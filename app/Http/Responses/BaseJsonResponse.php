@@ -27,7 +27,7 @@ abstract class BaseJsonResponse implements Responsable
     /**
      * Преобразование возвращаемых данных к массиву.
      */
-    protected function prepareData(): array
+    protected function prepareData(): ?array
     {
         if ($this->data instanceof Arrayable) {
             return $this->data->toArray();

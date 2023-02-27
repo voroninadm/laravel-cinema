@@ -10,9 +10,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 class FailResponse extends BaseJsonResponse
 {
-    public function __construct($data, protected ?string $message = null, int $code = Response::HTTP_BAD_REQUEST)
+    public function __construct($errors, protected ?string $message = null, int $code = Response::HTTP_BAD_REQUEST)
     {
-        parent::__construct($code, []);
+        parent::__construct($code, $errors);
     }
 
     protected function makeResponseData(): array

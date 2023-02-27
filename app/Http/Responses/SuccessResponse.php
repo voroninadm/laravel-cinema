@@ -12,7 +12,7 @@ class SuccessResponse extends BaseJsonResponse
 {
     public function __construct($data, int $code = Response::HTTP_OK)
     {
-        parent::__construct($code, []);
+        parent::__construct($code, $data);
     }
 
     protected function makeResponseData(): array
